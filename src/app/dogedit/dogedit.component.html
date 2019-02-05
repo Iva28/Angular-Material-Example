@@ -1,0 +1,27 @@
+<form [formGroup]='dogForm' (ngSubmit)='onSubmit()'>
+  <div>
+    <mat-form-field>
+        <input formControlName='name' matInput placeholder="Name" type="text" />
+      </mat-form-field>
+  </div>
+  <div>
+      <label>Gender: </label>
+      <mat-radio-group formControlName='gender'>
+          <mat-radio-button [value]="true">Male </mat-radio-button>
+          <mat-radio-button [value]="false">Female </mat-radio-button>
+      </mat-radio-group>
+  </div>
+  <div>
+      <mat-form-field>
+          <mat-select placeholder="Color" formControlName='color'>
+            <mat-option value='black'>Black</mat-option>
+            <mat-option value='white'>White</mat-option>
+            <mat-option value='red'>Red</mat-option>
+          </mat-select>
+        </mat-form-field>
+  </div>
+  <div>
+      <button (click)='onClose()' type='reset' mat-raised-button>Close</button>
+      <button mat-raised-button color="accent" type='submit'>Save</button>
+  </div>
+</form>
